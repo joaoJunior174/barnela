@@ -50,7 +50,10 @@ export default function App() {
   useEffect(() => {
     async function carregarPresentes() {
       try {
-        const response = await fetch("https://corsproxy.io/?http://159.65.164.149:8080/pessoas/presentes");
+        const corsProxy = "https://api.allorigins.win/raw?url=";
+const url = "http://159.65.164.149:8080/pessoas/presentes";
+
+const response = await fetch(`${corsProxy}${encodeURIComponent(url)}`);
         if (!response.ok) throw new Error("Erro ao buscar presentes");
         const presentesHtmlArray = await response.json();
 
