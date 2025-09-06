@@ -50,7 +50,7 @@ export default function App() {
   useEffect(() => {
     async function carregarPresentes() {
       try {
-        const response = await fetch("http://159.65.164.149:8080/pessoas/presentes");
+        const response = await fetch("http://localhost:8080/pessoas/presentes");
         if (!response.ok) throw new Error("Erro ao buscar presentes");
         const presentesHtmlArray = await response.json();
 
@@ -111,7 +111,7 @@ export default function App() {
     };
 
     try {
-      const res = await fetch("http://159.65.164.149:8080/pessoas", {
+      const res = await fetch("http://localhost:8080/pessoas", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
