@@ -121,6 +121,7 @@ const response = await fetch(`${corsProxy}${encodeURIComponent(url)}`);
         },
         body: JSON.stringify(data),
       });
+      
 
       if (res.ok) {
         alert("Presente registrado com sucesso!");
